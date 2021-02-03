@@ -1,3 +1,24 @@
+---
+page_type: sample
+languages:
+- c
+products:
+- azure
+- azure-sphere
+name: Azure Sphere – DNS service discovery
+urlFragment: DNSServiceDiscovery
+extendedZipContent:
+- path: .clang-format
+  target: .clang-format
+- path: BUILD_INSTRUCTIONS.md
+  target: BUILD_INSTRUCTIONS.md
+- path: Samples/SECURITY.md
+  target: SECURITY.md
+- path: Samples/troubleshooting.md
+  target: troubleshooting.md
+description: "Demonstrates how to perform service discovery on the local network by using multicast DNS (mDNS)."
+---
+
 # Sample: DNS service discovery
 
 **Note:** DNS-SD is currently a Beta OS feature.
@@ -37,7 +58,7 @@ The sample requires the following hardware:
 
 ## Prepare the sample
 
-1. Even if you've performed this set up previously, ensure that you have Azure Sphere SDK version 20.10 or above. At the command prompt, run **azsphere show-version** to check. Install [the Azure Sphere SDK](https://docs.microsoft.com/azure-sphere/install/install-sdk) as needed.
+1. Even if you've performed this set up previously, ensure that you have Azure Sphere SDK version 21.01 or above. At the command prompt, run **azsphere show-version** to check. Install [the Azure Sphere SDK](https://docs.microsoft.com/azure-sphere/install/install-sdk) as needed.
 1. Connect your Azure Sphere device to your computer by USB.
 1. Connect your Azure Sphere device to the same local network as the DNS service.
 1. Enable application development, if you have not already done so:
@@ -109,10 +130,10 @@ To send requests to the web server, you can incorporate code from the [HTTPS_Cur
 By default, this sample queries the _sample-service._tcp.local DNS server address. To query a different DNS server, make the following changes:
 
 1. Open app_manifest.json.
-1. Change the value of the `AllowedConnections` field from `"_sample-service._tcp.local"` to the new DNS server address, such as `“_http._tcp.local”`.
+1. Change the value of the `AllowedConnections` field from `"_sample-service._tcp.local"` to the new DNS server address, such as `"_http._tcp.local"`.
 1. Open main.c.
 1. Go to the line `static const char DnsServiceDiscoveryServer[] = "_sample-service._tcp.local";"` and replace `_sample-service._tcp.local` with the new DNS server address.
 
 ## Sending unicast queries
 
-If you don't need to use multicast queries, you can use unicast queries by calling the res_send() POSIX API to query the DNS server and process the response in a single blocking call. This may simplify the application, especially if it doesn’t need to perform other activities while waiting for the response.
+If you don't need to use multicast queries, you can use unicast queries by calling the res_send() POSIX API to query the DNS server and process the response in a single blocking call. This may simplify the application, especially if it doesn't need to perform other activities while waiting for the response.

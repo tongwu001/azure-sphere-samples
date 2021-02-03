@@ -1,8 +1,29 @@
-# Sample: System Time
+---
+page_type: sample
+languages:
+- c
+products:
+- azure
+- azure-sphere
+name: Azure Sphere – System time
+urlFragment: SystemTime
+extendedZipContent:
+- path: HardwareDefinitions
+  target: HardwareDefinitions
+- path: .clang-format
+  target: .clang-format
+- path: BUILD_INSTRUCTIONS.md
+  target: BUILD_INSTRUCTIONS.md
+- path: Samples/SECURITY.md
+  target: SECURITY.md
+- path: Samples/troubleshooting.md
+  target: troubleshooting.md
+description: "Demonstrates how to manage the system time and the hardware real-time clock."
+---
 
-This sample C application demonstrates how to manage the system time and to use the hardware [RTC (real time clock)](https://docs.microsoft.com/azure-sphere/app-development/rtc).
+# Sample: System time
 
-The system time is changed whenever button A is pressed, and it is synchronized to the hardware RTC whenever button B is pressed.
+This sample application demonstrates how to manage the system time and the hardware [RTC (real time clock)](https://docs.microsoft.com/azure-sphere/app-development/rtc). The system time is changed whenever button A is pressed, and it is synchronized to the hardware RTC whenever button B is pressed.
 
 The sample uses the following Azure Sphere libraries.
 
@@ -45,7 +66,7 @@ You must perform these steps before you continue:
 
 ## To prepare the sample
 
-1. Even if you've performed this set up previously, ensure you have Azure Sphere SDK version 20.10 or above. At the command prompt, run **azsphere show-version** to check. Install [the Azure Sphere SDK](https://docs.microsoft.com/azure-sphere/install/install-sdk) as needed.
+1. Even if you've performed this set up previously, ensure you have Azure Sphere SDK version 21.01 or above. At the command prompt, run **azsphere show-version** to check. Install [the Azure Sphere SDK](https://docs.microsoft.com/azure-sphere/install/install-sdk) as needed.
 1. Clone the [Azure Sphere samples](https://github.com/Azure/azure-sphere-samples/) repo and find the SystemTime sample.
 
 ## Build and run the sample

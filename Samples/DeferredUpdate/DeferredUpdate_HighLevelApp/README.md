@@ -1,4 +1,27 @@
-# Sample: Deferred update
+---
+page_type: sample
+languages:
+- c
+products:
+- azure
+- azure-sphere
+name: Azure Sphere – Deferred update
+urlFragment: DeferredUpdate
+extendedZipContent:
+- path: HardwareDefinitions
+  target: HardwareDefinitions
+- path: .clang-format
+  target: .clang-format
+- path: BUILD_INSTRUCTIONS.md
+  target: BUILD_INSTRUCTIONS.md
+- path: Samples/SECURITY.md
+  target: SECURITY.md
+- path: Samples/troubleshooting.md
+  target: troubleshooting.md
+description: "Demonstrates how a high-level application can defer application updates."
+---
+
+# Sample: Deferred update high-level-app
 
 This sample demonstrates how to [defer updates](https://docs.microsoft.com/azure-sphere/app-development/device-update-deferral) to an Azure Sphere application. In this sample, you will do the following:
 
@@ -24,7 +47,7 @@ The sample requires the following hardware:
 
    **Note:** By default, this sample targets [MT3620 reference development board (RDB)](https://docs.microsoft.com/azure-sphere/hardware/mt3620-reference-board-design) hardware, such as the MT3620 development kit from Seeed Studio. To build the sample for different Azure Sphere hardware, change the Target Hardware Definition Directory in the CMakeLists.txt file. For detailed instructions, see the [README file in the HardwareDefinitions folder](../../../HardwareDefinitions/README.md).
 
-- Azure Sphere SDK version 20.10 or above. To check, run **azsphere show-version** at the command prompt.
+- Azure Sphere SDK version 21.01 or above. To check, run **azsphere show-version** at the command prompt.
 
 ## Create the Blink application .imagepackage file
 
